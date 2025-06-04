@@ -33,7 +33,7 @@ public class AlunoService {
     // Método para inserir novo aluno
     public Aluno saveAluno(Aluno aluno) {
         // Procurando por curso
-        Curso aux = cursoRepository.findById(curso.getCurso().getId()).orElse(null);
+        Curso aux = cursoRepository.findById(aluno.getCurso().getId()).orElse(null);
         if (aux != null){ // caso curso sejá encontrado, inserir curso
             aluno.setCurso(aux);
             return alunoRepository.save(aluno);
